@@ -1,0 +1,48 @@
+<div class="container" >
+  <div class="row" >
+
+        <div class="col-md-6">
+
+                <div class="card">
+                      <div class="text-center" >
+                        <h1>Student signup</h1>
+                        <strong>signup anytime!</strong><hr>
+                      </div>
+
+                      <form [formGroup]="signupform" (ngSubmit)="signup()">
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1"  class="form-label">Name</label>
+                          <input type="name" class="form-control" formControlName="name" id="exampleInputEmail1" placeholder="enter your name" aria-describedby="emailHelp">
+                          <small *ngIf="signupform.get('name')?.invalid && signupform.get('name')?.touched " class="text-danger">Name is Required</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1"  class="form-label">Email address</label>
+                          <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" placeholder="enter email" aria-describedby="emailHelp">
+                          <small *ngIf="signupform.get('email')?.invalid && signupform.get('email')?.touched " class="text-danger">Email is Required</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1"  class="form-label">Mobile Number</label>
+                          <input type="number" class="form-control" formControlName="mobile" id="exampleInputEmail1" placeholder="enter mobile number" aria-describedby="emailHelp">
+                          <small *ngIf="signupform.get('mobile')?.invalid && signupform.get('mobile')?.touched " class="text-danger">Mobile number is Required</small>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" formControlName="password" placeholder="enter password" id="exampleInputPassword1">
+                          <small *ngIf="signupform.get('password')?.invalid && signupform.get('password')?.touched " class="text-danger">Password is Required</small>
+                        </div>
+
+                        <button type="submit"  [disabled]="signupform.invalid" class="btn btn-primary">signup</button>
+
+                      </form>
+                      <a style="color: blue; margin-top: 10px;" routerLink="/login">Already registered? click to login</a>
+
+                </div>
+        </div>
+
+
+  </div>
+</div>
